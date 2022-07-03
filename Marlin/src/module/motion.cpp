@@ -2048,13 +2048,13 @@ void prepare_line_to_destination() {
             typedef void (*adjustFunc_t)(const bool);
 
             adjustFunc_t lock[] = {
-              stepper.set_z1_lock, stepper.set_z2_lock, stepper.set_z3_lock
+              stepper.set_z1_lock, stepper.set_z2_lock
               #if NUM_Z_STEPPERS >= 4
                 , stepper.set_z4_lock
               #endif
             };
             float adj[] = {
-              0, endstops.z2_endstop_adj, endstops.z3_endstop_adj
+              0, endstops.z2_endstop_adj
               #if NUM_Z_STEPPERS >= 4
                 , endstops.z4_endstop_adj
               #endif
@@ -2118,7 +2118,7 @@ void prepare_line_to_destination() {
 
             stepper.set_z1_lock(false);
             stepper.set_z2_lock(false);
-            stepper.set_z3_lock(false);
+            //stepper.set_z3_lock(false);
             #if NUM_Z_STEPPERS >= 4
               stepper.set_z4_lock(false);
             #endif

@@ -244,7 +244,7 @@ void AnycubicTFTClass::HandleSpecialMenu() {
         return;
         break;
 
-        #if ENABLED(PROBE_MANUALLY)
+        #if ENABLED(MESH_BED_LEVELING)
           case '0':
             switch (SelectedDirectory[2]) {
               case '1': // "<01ZUp0.1>"
@@ -401,7 +401,7 @@ void AnycubicTFTClass::RenderCurrentFileList() {
 
 void AnycubicTFTClass::RenderSpecialMenu(uint16_t selectedNumber) {
   switch (selectedNumber) {
-    #if ENABLED(PROBE_MANUALLY)
+    #if ENABLED(MESH_BED_LEVELING)
       case 0: // First Page
         SENDLINE_PGM("<01ZUp0.1>");
         SENDLINE_PGM("<Z Up 0.1>");
